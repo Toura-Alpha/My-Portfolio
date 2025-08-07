@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Your Name</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main-layout.css">
+    <link rel="stylesheet" href="../css/pages/_projects.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="./hero.html" class="nav-link">Home</a>
+            <a href="./about.html" class="nav-link">About</a>
+            <a href="./skills.html" class="nav-link">Skills</a>
+            <a href="./projects.html" class="nav-link active">Projects</a>
+            <a href="./contact.html" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            <a href="../auth/signin.html" id="auth-link" class="button primary auth-button">Login</a>
+            <button id="logout-button" class="button secondary auth-button hidden">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects-section" class="projects-section container">
+            <h2 class="section-title reveal-text">My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card reveal-project-card" data-project-id="1">
+                    <div class="project-image-container">
+                        <img src="../assets/images/project1-thumbnail.jpg" alt="Project 1 Thumbnail"
+                            class="project-thumbnail">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Recommendation Engine</h3>
+                        <p class="project-description">Developed a real-time product recommendation system using
+                            collaborative filtering to enhance user discovery and sales conversion.</p>
+                        <p class="technologies">Technologies: Python, TensorFlow, Flask, PostgreSQL, AWS S3</p>
+                        <div class="project-actions">
+                            <a href="#" class="button secondary view-demo-button">View Demo</a>
+                            <a href="#" class="button secondary view-code-button">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-project-card" data-project-id="2">
+                    <div class="project-image-container">
+                        <img src="../assets/images/project2-thumbnail.jpg" alt="Project 2 Thumbnail"
+                            class="project-thumbnail">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>DevOps CI/CD Pipeline Automation</h3>
+                        <p class="project-description">Automated deployment workflows for a microservices architecture
+                            using Jenkins, Docker, and Kubernetes, significantly reducing deployment time.</p>
+                        <p class="technologies">Technologies: Jenkins, Docker, Kubernetes, AWS EKS, Python</p>
+                        <div class="project-actions">
+                            <a href="#" class="button secondary view-demo-button">View Case Study</a>
+                            <a href="#" class="button secondary view-code-button">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-project-card" data-project-id="3">
+                    <div class="project-image-container">
+                        <img src="../assets/images/project3-thumbnail.jpg" alt="Project 3 Thumbnail"
+                            class="project-thumbnail">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile Expense Tracker App</h3>
+                        <p class="project-description">Built a cross-platform mobile application for personal finance
+                            tracking with intuitive UI and secure data synchronization.</p>
+                        <p class="technologies">Technologies: React Native, Firebase Firestore, Node.js</p>
+                        <div class="project-actions">
+                            <a href="#" class="button secondary view-demo-button">View Demo</a>
+                            <a href="#" class="button secondary view-code-button">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-project-card" data-project-id="4">
+                    <div class="project-image-container tilt-effect">
+                        <img src="../assets/images/project4-thumbnail.jpg" alt="Project 4 Thumbnail"
+                            class="project-thumbnail">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Data Visualization Dashboard</h3>
+                        <p class="project-description">Designed and implemented a dynamic dashboard for visualizing
+                            complex datasets, improving data interpretation for stakeholders.</p>
+                        <p class="technologies">Technologies: D3.js, React, Flask, PostgreSQL</p>
+                        <div class="project-actions">
+                            <a href="#" class="button secondary view-demo-button">View Demo</a>
+                            <a href="#" class="button secondary view-code-button">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="project-detail-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-project-title"></h3>
+            <div class="modal-project-details">
+                <img id="modal-project-image" src="" alt="Project Image">
+                <p id="modal-project-problem"></p>
+                <p id="modal-project-contribution"></p>
+                <p id="modal-project-technologies"></p>
+                <p id="modal-project-solution"></p>
+                <p id="modal-project-impact"></p>
+                <div class="modal-project-links">
+                    <a id="modal-demo-link" href="#" class="button primary" target="_blank">Live Demo</a>
+                    <a id="modal-code-link" href="#" class="button secondary" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="../node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
+    <script type="module" src="../js/main-layout.js"></script>
+    <script type="module" src="../js/pages/_projects.js"></script>
+</body>
+
+</html>
