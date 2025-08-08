@@ -1,0 +1,244 @@
+/* my-portfolio/css/global.css */
+
+/* --- Color Palette Variables --- */
+:root {
+    /* Light Theme (Default) - Minimalist & Modern Inspired */
+    --bg-primary: #F4F4F4;
+    /* Light Gray */
+    --text-primary: #2E2E2E;
+    /* Charcoal */
+    --bg-secondary: #FFFFFF;
+    /* White */
+    --accent-color: #4A90E2;
+    /* Muted Blue */
+    --text-subtle: #64748B;
+    /* Cool Gray for subtle text */
+    --error-color: #E63946;
+    /* Rich Red for errors */
+    --border-color: #D1D5DB;
+    /* Light gray border */
+    --input-bg: #F9FAFB;
+    /* Light input background */
+    --input-focus-border: var(--accent-color);
+}
+
+body.dark-theme {
+    /* Dark Theme Overrides - Tech & Futuristic Inspired */
+    --bg-primary: #121212;
+    /* Soft Dark Gray */
+    --text-primary: #F4F4F4;
+    /* Light Gray */
+    --bg-secondary: #2E2E2E;
+    /* Charcoal */
+    --accent-color: #22D3EE;
+    /* Neon Cyan */
+    --text-subtle: #64748B;
+    /* Cool Gray (consistent) */
+    --error-color: #E63946;
+    /* Rich Red (consistent) */
+    --border-color: #4B5563;
+    /* Darker gray border */
+    --input-bg: #1F2937;
+    /* Dark input background */
+    --input-focus-border: var(--accent-color);
+}
+
+/* --- Base Styles & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Consider custom fonts from assets/fonts/ */
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Smooth theme transition */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    transition: color 0.5s ease;
+    /* Smooth theme transition */
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Buttons (Common Styles) --- */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    /* Ensure no underline on buttons */
+}
+
+.button.primary {
+    background-color: var(--accent-color);
+    color: var(--bg-secondary);
+    /* Text color contrasts with accent */
+}
+
+.button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.button.secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    /* Text color contrasts with accent */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* --- Form Group & Floating Labels (Common Styles for Auth & Contact) --- */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 10px 10px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
+    /* Dynamic shadow */
+}
+
+.form-group.floating-label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: var(--text-subtle);
+    pointer-events: none;
+    transition: 0.2s ease all;
+    font-size: 1em;
+}
+
+.form-group input:focus+.floating-label,
+.form-group input:not(:placeholder-shown)+.floating-label,
+.form-group textarea:focus+.floating-label,
+.form-group textarea:not(:placeholder-shown)+.floating-label {
+    top: -10px;
+    font-size: 0.8em;
+    color: var(--accent-color);
+    background-color: var(--bg-primary);
+    /* Match background for clean lift */
+    padding: 0 5px;
+    left: 5px;
+}
+
+/* Validation Icons (Placeholder) */
+.form-group.validation-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    display: none;
+    /* Hidden by default, shown via JS */
+}
+
+/* Responsive Adjustments (Global) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

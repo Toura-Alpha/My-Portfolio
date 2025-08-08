@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Engineer</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main-layout.css">
+    <link rel="stylesheet" href="../css/pages/_hero.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="hero.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            <a href="../auth/signin.html" id="auth-link" class="button primary auth-button">Login</a>
+            <button id="logout-button" class="button secondary auth-button hidden">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero-main" class="hero-section">
+            <div class="hero-background-elements"></div>
+            <div class="container hero-content">
+                <h1 class="name-reveal">Hi, I'm <span class="highlight">YOUR NAME</span></h1>
+                <p id="hero-tagline" class="tagline-typewriter"></p> <a href="projects.html"
+                    class="button primary cta-button">Explore My Work</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 YOUR NAME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../node_modules/typewriter-effect/dist/core.js"></script>
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
+    <script type="module" src="../js/main-layout.js"></script>
+    <script type="module" src="../js/pages/_hero.js"></script>
+</body>
+
+</html>

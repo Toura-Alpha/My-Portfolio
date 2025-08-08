@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Your Name</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main-layout.css">
+    <link rel="stylesheet" href="../css/pages/_about.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="hero.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            <a href="../auth/signin.html" id="auth-link" class="button primary auth-button">Login</a>
+            <button id="logout-button" class="button secondary auth-button hidden">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-me" class="about-section container">
+            <h2 class="section-title reveal-text">About Me</h2>
+            <div class="about-content">
+                <div class="profile-photo-container reveal-element">
+                    <img src="../assets/images/profile.jpg" alt="Your Name" class="profile-photo">
+                </div>
+                <div class="bio-text reveal-element">
+                    <p>
+                        Hello! I'm YOUR NAME, a passionate software engineer with a knack for building robust, scalable,
+                        and user-centric applications. My journey into coding began with a fascination for how
+                        technology solves real-world problems, leading me to dive deep into various programming
+                        languages and frameworks.
+                    </p>
+                    <p>
+                        I specialize in and thrive on transforming complex ideas into elegant, efficient code. I believe
+                        in continuous learning, clean architecture, and the power of collaboration to deliver
+                        exceptional digital experiences.
+                    </p>
+                    <p>
+                        Outside of coding, I enjoy, which helps me approach challenges with a fresh perspective.
+                    </p>
+                    <p class="values-statement">
+                        **My Approach:** Problem-solving, clean code, user-centric design, and continuous improvement.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 YOUR NAME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="../node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
+    <script type="module" src="../js/main-layout.js"></script>
+    <script type="module" src="../js/pages/_about.js"></script>
+</body>
+
+</html>

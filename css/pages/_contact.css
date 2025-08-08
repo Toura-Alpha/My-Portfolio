@@ -1,0 +1,183 @@
+/* my-portfolio/css/pages/_contact.css */
+
+.contact-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.2em;
+    color: var(--text-subtle);
+    margin-bottom: 50px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Info on left, form on right */
+    gap: 60px;
+    margin-top: 50px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.contact-info {
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    /* Visual separator */
+}
+
+.contact-info h3 {
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    font-weight: bold;
+}
+
+.copy-button {
+    background-color: var(--accent-color);
+    color: var(--bg-secondary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #3a7bd5;
+    /* Darker accent */
+}
+
+.copy-confirmation {
+    font-size: 0.85em;
+    color: var(--accent-color);
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-primary);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Add specific social icon colors/styles if using SVG icons that change color */
+.linkedin-icon:hover {
+    color: #0077B5;
+}
+
+.github-icon:hover {
+    color: #6e5494;
+}
+
+/* GitHub purple */
+
+
+.contact-form-container {
+    padding: 20px;
+}
+
+.contact-form-container h3 {
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.animated-form.form-group {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-form.form-group.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.form-status-message {
+    margin-top: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-status-message.success {
+    color: #28a745;
+    /* Green */
+}
+
+.form-status-message.error {
+    color: var(--error-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        gap: 40px;
+    }
+
+    .contact-info {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 40px;
+    }
+
+    .contact-form-container {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-intro {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

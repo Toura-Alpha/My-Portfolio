@@ -1,0 +1,201 @@
+/* my-portfolio/css/pages/_projects.css */
+
+.projects-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.project-card {
+    background-color: var(--bg-secondary);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    /* Initial state for reveal animation */
+    transform: translateY(30px);
+    /* Initial state for reveal animation */
+}
+
+.project-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover.project-thumbnail {
+    transform: scale(1.05);
+}
+
+/* Image Reveal Effect (using clip-path) */
+.project-image-container.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    /* Or a solid color that matches your theme */
+    transform-origin: bottom;
+    clip-path: inset(0 0 100% 0);
+    /* Starts hidden from bottom */
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Smooth reveal */
+}
+
+.project-card.is-visible.project-image-container.image-overlay {
+    clip-path: inset(0 0 0 0);
+    /* Reveals completely */
+}
+
+/* 3D Tilt Effect for specific cards (e.g.,.tilt-effect) */
+.project-image-container.tilt-effect {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.project-image-container.tilt-effect.project-thumbnail {
+    transform: translateZ(0);
+    /* Initial state for 3D */
+    transition: transform 0.2s ease-out;
+}
+
+.project-image-container.tilt-effect:hover.project-thumbnail {
+    transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+    /* Example 3D tilt */
+}
+
+
+.project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.project-info.project-description {
+    font-size: 1em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    /* Allows description to take available space */
+}
+
+.project-info.technologies {
+    font-size: 0.9em;
+    color: var(--text-subtle);
+    margin-bottom: 20px;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    /* Push buttons to bottom */
+}
+
+.project-actions.button {
+    flex-grow: 1;
+    min-width: 120px;
+    font-size: 0.9em;
+    padding: 10px 15px;
+}
+
+/* Modal for Project Details */
+.modal-project-details {
+    text-align: left;
+}
+
+.modal-project-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-project-details p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+.modal-project-details.modal-project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 15px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+        gap: 30px;
+    }
+
+    .project-image-container {
+        height: 200px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 1.4em;
+    }
+
+    .project-info.project-description,
+    .project-info.technologies {
+        font-size: 0.95em;
+    }
+
+    .project-actions.button {
+        width: 100%;
+        min-width: unset;
+    }
+}

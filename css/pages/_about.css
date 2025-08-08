@@ -1,0 +1,122 @@
+/* my-portfolio/css/pages/_about.css */
+
+.about-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.profile-photo-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transform-style: preserve-3d;
+    /* For 3D tilt */
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease-out;
+}
+
+/* 3D Tilt Effect on Hover */
+.profile-photo-container:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.profile-photo-container:hover.profile-photo {
+    transform: translateZ(20px);
+    /* Push image forward */
+}
+
+
+.bio-text {
+    flex: 2;
+    min-width: 300px;
+    max-width: 700px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: var(--text-primary);
+}
+
+.bio-text p {
+    margin-bottom: 20px;
+}
+
+.bio-text.values-statement {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 30px;
+    font-size: 1.05em;
+}
+
+/* Scroll-triggered reveal animations */
+.about-section.reveal-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-section.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for bio paragraphs */
+.bio-text p {
+    transition-delay: var(--stagger-delay);
+    /* Set by JS */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-photo-container,
+    .bio-text {
+        max-width: 600px;
+        /* Adjust max-width for smaller screens */
+        width: 100%;
+    }
+
+    .bio-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 15px;
+    }
+
+    .profile-photo-container {
+        min-width: 200px;
+        max-width: 300px;
+    }
+
+    .bio-text {
+        font-size: 1em;
+    }
+}

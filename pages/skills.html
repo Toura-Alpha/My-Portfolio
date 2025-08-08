@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Your Name</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main-layout.css">
+    <link rel="stylesheet" href="../css/pages/_skills.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="hero.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="skills.html" class="nav-link active">Skills</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            <a href="../auth/signin.html" id="auth-link" class="button primary auth-button">Login">Login</a>
+            <button id="logout-button" class="button secondary auth-button hidden">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="skills-section" class="skills-section container">
+            <h2 class="section-title reveal-text">Skills & Technologies</h2>
+
+            <div class="skill-filters">
+                <button class="button secondary filter-button active" data-filter="all">All</button>
+                <button class="button secondary filter-button" data-filter="frontend">Frontend</button>
+                <button class="button secondary filter-button" data-filter="backend">Backend</button>
+                <button class="button secondary filter-button" data-filter="database">Database</button>
+                <button class="button secondary filter-button" data-filter="tools">Tools</button>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item reveal-skill-item" data-category="frontend">
+                    <img src="../assets/svg/react-icon.svg" alt="React Icon" class="skill-icon">
+                    <span>React.js</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="frontend">
+                    <img src="../assets/svg/vue-icon.svg" alt="Vue Icon" class="skill-icon">
+                    <span>Vue.js</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="frontend">
+                    <img src="../assets/svg/html-icon.svg" alt="HTML Icon" class="skill-icon">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="frontend">
+                    <img src="../assets/svg/css-icon.svg" alt="CSS Icon" class="skill-icon">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="frontend">
+                    <img src="../assets/svg/js-icon.svg" alt="JavaScript Icon" class="skill-icon">
+                    <span>JavaScript (ES6+)</span>
+                </div>
+
+                <div class="skill-item reveal-skill-item" data-category="backend">
+                    <img src="../assets/svg/node-icon.svg" alt="Node.js Icon" class="skill-icon">
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="backend">
+                    <img src="../assets/svg/python-icon.svg" alt="Python Icon" class="skill-icon">
+                    <span>Python</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="backend">
+                    <img src="../assets/svg/express-icon.svg" alt="Express.js Icon" class="skill-icon">
+                    <span>Express.js</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="backend">
+                    <img src="../assets/svg/java-icon.svg" alt="Java Icon" class="skill-icon">
+                    <span>Java</span>
+                </div>
+
+                <div class="skill-item reveal-skill-item" data-category="database">
+                    <img src="../assets/svg/mongodb-icon.svg" alt="MongoDB Icon" class="skill-icon">
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="database">
+                    <img src="../assets/svg/postgresql-icon.svg" alt="PostgreSQL Icon" class="skill-icon">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="database">
+                    <img src="../assets/svg/mysql-icon.svg" alt="MySQL Icon" class="skill-icon">
+                    <span>MySQL</span>
+                </div>
+
+                <div class="skill-item reveal-skill-item" data-category="tools">
+                    <img src="../assets/svg/git-icon.svg" alt="Git Icon" class="skill-icon">
+                    <span>Git</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="tools">
+                    <img src="../assets/svg/docker-icon.svg" alt="Docker Icon" class="skill-icon">
+                    <span>Docker</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="tools">
+                    <img src="../assets/svg/aws-icon.svg" alt="AWS Icon" class="skill-icon">
+                    <span>AWS</span>
+                </div>
+                <div class="skill-item reveal-skill-item" data-category="tools">
+                    <img src="../assets/svg/jest-icon.svg" alt="Jest Icon" class="skill-icon">
+                    <span>Jest</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 YOUR NAME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="../node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
+    <script type="module" src="../js/main-layout.js"></script>
+    <script type="module" src="../js/pages/_skills.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Your Name</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/auth/_auth.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card glassmorphism-effect">
+            <h2 id="auth-title">Join the Community!</h2>
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <input type="email" id="signup-email" required>
+                    <label for="signup-email" class="floating-label">Email</label>
+                    <span class="validation-icon"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signup-password" required>
+                    <label for="signup-password" class="floating-label">Password</label>
+                    <span class="validation-icon"></span>
+                </div>
+                <button type="submit" class="button primary auth-submit-button">Sign Up</button>
+                <p id="signup-error" class="error-message"></p>
+            </form>
+            <p class="auth-toggle-text">Already have an account? <a href="signin.html" class="auth-link">Login</a></p>
+            <div class="social-login-options">
+                <p>Or sign up with:</p>
+                <button class="button secondary social-button google-button">
+                    <img src="../assets/svg/google-icon.svg" alt="Google Icon"> Google
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
+    <script type="module" src="../js/auth/_auth.js"></script>
+</body>
+
+</html>
